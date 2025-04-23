@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FBW Gym - Admin Dashboard</title>
+    <link rel="stylesheet" href="Css/dashboard.css" />
+    <link rel="stylesheet" href="Css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar with Admin-Specific Menu -->
+      <div class="sidebar">
+        <div class="logo">
+          <h2>FBW Gym</h2>
+          <p>Admin Console</p>
+          <img
+            src="images/logo.jpg"
+            alt="FBW Gym Logo"
+            height="100"
+            width="100"
+          />
+        </div>
+
+        <div class="nav-menu">
+          <div class="nav-item active">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-user-cog"></i>
+            <span>User Management</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>Payments</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-cogs"></i>
+            <span>System Settings</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Reports</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-bell"></i>
+            <span>Alerts</span>
+          </div>
+          <div class="nav-item logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1>Admin Dashboard</h1>
+          <div class="user-profile">
+            <img src="images/centaur.jpg" alt="Admin" />
+            <span>Kyss Centaur Fuentes</span>
+          </div>
+        </div>
+
+        <!-- Stats Cards (Admin Metrics) -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Total Members</h3>
+              <h2>142</h2>
+            </div>
+            <div class="stat-icon workouts">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Monthly Revenue</h3>
+              <h2>$12,850</h2>
+            </div>
+            <div class="stat-icon calories">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Staff Members</h3>
+              <h2>8</h2>
+            </div>
+            <div class="stat-icon progress">
+              <i class="fas fa-user-tie"></i>
+            </div>
+          </div>
+
+          <div class="stat-card admin-only">
+            <div class="stat-info">
+              <h3>System Status</h3>
+              <h2 style="color: var(--success)">Online</h2>
+            </div>
+            <div
+              class="stat-icon"
+              style="
+                background-color: rgba(220, 53, 69, 0.1);
+                color: var(--danger);
+              "
+            >
+              <i class="fas fa-server"></i>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Pending Actions</h3>
+              <h2>5</h2>
+            </div>
+            <div class="stat-icon weight">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <h2 class="section-title">
+          <i class="fas fa-bolt"></i>
+          Quick Actions
+        </h2>
+        <div
+          class="schedule-container"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+          "
+        >
+          <button
+            style="
+              padding: 15px;
+              background: var(--primary);
+              color: white;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+            "
+          >
+            <i class="fas fa-user-plus"></i> Add Member
+          </button>
+          <button
+            style="
+              padding: 15px;
+              background: var(--success);
+              color: white;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+            "
+          >
+            <i class="fas fa-file-invoice-dollar"></i> Process Payment
+          </button>
+          <button
+            style="
+              padding: 15px;
+              background: var(--accent);
+              color: white;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+            "
+          >
+            <i class="fas fa-envelope"></i> Send Broadcast
+          </button>
+        </div>
+
+        <!-- Pending Approvals -->
+        <h2 class="section-title">
+          <i class="fas fa-clock"></i>
+          Pending Approvals
+        </h2>
+        <div class="schedule-container">
+          <div class="schedule-item">
+            <div class="workout-time">#10045</div>
+            <div class="workout-name">
+              Membership Upgrade
+              <div class="workout-trainer">Maria Santos - Premium Plan</div>
+            </div>
+            <div class="workout-status status-pending">Review</div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="workout-time">#10046</div>
+            <div class="workout-name">
+              New Trainer Application
+              <div class="workout-trainer">James Wilson</div>
+            </div>
+            <div class="workout-status status-pending">Interview</div>
+          </div>
+        </div>
+
+        <!-- System Alerts -->
+        <h2 class="section-title">
+          <i class="fas fa-exclamation-triangle"></i>
+          System Alerts
+        </h2>
+        <div class="activities-container">
+          <div class="activity-item">
+            <div
+              class="activity-icon"
+              style="
+                background-color: rgba(220, 53, 69, 0.1);
+                color: var(--danger);
+              "
+            >
+              <i class="fas fa-server"></i>
+            </div>
+            <div class="activity-info">
+              <h4>Backup Required</h4>
+              <p>System backup overdue by 2 days</p>
+            </div>
+            <div class="activity-time">High Priority</div>
+          </div>
+
+          <div class="activity-item">
+            <div
+              class="activity-icon"
+              style="background-color: rgba(255, 193, 7, 0.1); color: #ffc107"
+            >
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="activity-info">
+              <h4>Equipment Maintenance</h4>
+              <p>5 machines due for service</p>
+            </div>
+            <div class="activity-time">Medium Priority</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Js/javascript_admin.js"></script>
+  </body>
+</html>

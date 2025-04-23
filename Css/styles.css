@@ -1,0 +1,589 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto; /* Siguraduhin na enabled ang main scrollbar */
+  /* Remove overflow: hidden */
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  overflow: auto; /* Change from hidden to auto */
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login-container {
+  position: sticky;
+  top: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px auto;
+  margin-top: 50px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+
+.login-container h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.input-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.input-group input,
+input,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+select:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.forgot-password {
+  color: #fff; /* adjust kung dark bg */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.options label,
+.user-type label {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.options input[type="checkbox"],
+.user-type input {
+  margin-right: 5px;
+}
+
+.user-type {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.login-status {
+  text-align: center;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.signup-link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.bubbles {
+  position: fixed; /* Changed from absolute to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure bubbles stay behind content */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.bubbles span {
+  width: calc(10px + var(--i) * 1px);
+  height: calc(10px + var(--i) * 1px);
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: bubble 15s linear infinite;
+  animation-play-state: running; /* Default state */
+  animation-delay: calc(var(--i) * -1s);
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Pause animation when scrolling */
+body.scrolling .bubbles span {
+  animation-play-state: paused;
+}
+
+.bubbles span:nth-child(even) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main container with edge-to-edge scroll */
+.page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+  overflow-y: scroll;
+  height: auto;
+  padding: 50px 0; /* Add some vertical padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%; /* Limit height */
+  max-width: 100%;
+}
+
+.signup-container {
+  margin-top: 60%;
+  margin-bottom: 40px;
+  margin: 20px auto;
+  overflow: visible; /* Pinalitan mula sa auto */
+  max-height: none; /* Tinanggal ang height limit */
+  padding-bottom: 40px;
+}
+
+/* Add these to your existing styles.css */
+
+/* Gender Specification */
+.gender-specify {
+  padding-left: 25px;
+}
+
+.gender-specify input {
+  margin-top: 5px;
+}
+
+/* Security Questions */
+.security-question {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.question-select select {
+  color: #000 !important; /* Black text by default */
+  background: rgba(255, 255, 255, 0.8) !important; /* Light background */
+}
+
+.question-select select option {
+  color: #000; /* Black text for dropdown options */
+}
+
+.answer-group input {
+  color: #000 !important; /* Black text for answer field */
+  background: rgba(255, 255, 255, 0.8) !important; /* Light background */
+}
+
+.question-select select:hover,
+.answer-group input:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ) !important; /* Slightly lighter on hover */
+}
+
+.answer-group {
+  margin-top: 15px;
+}
+
+/* Verification Section */
+.verification-section {
+  margin: 30px 0;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start; /* Changed from center to flex-start */
+  gap: 10px; /* Increased from 8px */
+  margin: 15px 0;
+  line-height: 1.5; /* Added for better text alignment */
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-top: 3px; /* Adjust this value to vertically align with text */
+}
+
+.checkbox-group.terms {
+  margin-top: 20px;
+  align-items: flex-start; /* Ensure alignment stays at top */
+}
+
+.checkbox-group.not-robot {
+  margin-bottom: 25px;
+}
+
+.terms-link {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+  display: inline; /* Ensure links stay inline with text */
+}
+
+/* Sign Up Button */
+.signup-btn {
+  font-size: 18px;
+  padding: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 10px;
+  }
+
+  .signup-container {
+    padding: 25px;
+  }
+}
+
+/* Pwedeng lagyan ng style ang main scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+/* User Type Selection */
+.user-type-selection {
+  margin: 25px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.user-type-selection .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-type-selection label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.user-type-selection input[type="radio"] {
+  margin-right: 8px;
+}
+
+.login-status span {
+  font-weight: bold;
+  color: white;
+}
+
+/* Icons */
+.fa-user,
+.fa-user-tie,
+.fa-user-shield {
+  width: 20px;
+  text-align: center;
+}
+
+/* ===== BUTTONS ===== */
+.login-btn,
+.signup-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+label {
+  display: block;
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+h2 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 25px 0 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Better readability */
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.login-container,
+.signup-container {
+  position: relative;
+  width: 90%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 20px 0;
+}
+
+/* Form section improvements */
+.form-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.container {
+  height: auto; /* or remove height: 100vh if present */
+  overflow: visible;
+}
+
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Modern checkbox appearance */
+.checkbox-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-item input[type="checkbox"]:checked {
+  background-color: #4facfe;
+  border-color: #4facfe;
+}
+
+.checkbox-item input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  font-size: 14px;
+}
+
+/* ACCOUNT TYPE RADIO BUTTONS FIX */
+.account-type-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.radio-item input[type="radio"] {
+  opacity: 0; /* Hide default radio */
+  position: absolute;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.radio-item input[type="radio"]:checked + .radio-custom::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #4facfe;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-label {
+  font-size: 16px;
+  flex: 1;
+}
+
+.login-status {
+  margin-top: 15px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.login-status span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.radio-item i {
+  width: 20px;
+  text-align: center;
+  color: #4facfe;
+}

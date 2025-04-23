@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FBW Gym Fitness App - Employee Dashboard</title>
+    <link rel="stylesheet" href="Css/dashboard.css" />
+    <link rel="stylesheet" href="Css/employee.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <h2>FBW Gym</h2>
+          <p>Employee Dashboard</p>
+          <img
+            src="images/logo.jpg"
+            alt="FBW Gym Logo"
+            height="100"
+            width="100"
+          />
+        </div>
+        <div class="nav-menu">
+          <div class="nav-item active">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-users"></i> Manage Clients
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-calendar-alt"></i> Schedule
+          </div>
+          <div class="nav-item"><i class="fas fa-chart-line"></i> Reports</div>
+          <div class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </div>
+          <div class="nav-item"><i class="fas fa-cogs"></i> Settings</div>
+        </div>
+        <!-- ... other nav items ... -->
+        <div class="nav-item logout-btn">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1>Employee Dashboard</h1>
+          <div class="user-profile">
+            <img src="https://via.placeholder.com/40" alt="Profile" />
+            <span>John Doe</span>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-container">
+          <div class="stat-card clients">
+            <div class="stat-info">
+              <h3>Clients Managed</h3>
+              <h2>45</h2>
+            </div>
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+          <div class="stat-card sessions">
+            <div class="stat-info">
+              <h3>Completed Sessions</h3>
+              <h2>25</h2>
+            </div>
+            <div class="stat-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="stat-card feedback">
+            <div class="stat-info">
+              <h3>Client Feedback</h3>
+              <h2>92%</h2>
+            </div>
+            <div class="stat-icon">
+              <i class="fas fa-thumbs-up"></i>
+            </div>
+          </div>
+          <div class="stat-card tasks">
+            <div class="stat-info">
+              <h3>Upcoming Tasks</h3>
+              <h2>5</h2>
+            </div>
+            <div class="stat-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trainer Schedule -->
+        <div class="schedule-container">
+          <div class="section-title">
+            <i class="fas fa-calendar-alt"></i> Trainer Schedule
+          </div>
+          <div class="schedule-item">
+            <div class="workout-time">09:00 AM</div>
+            <div class="workout-name">Yoga Class</div>
+            <div class="workout-trainer">Trainer: John Doe</div>
+            <div class="workout-status status-upcoming">Upcoming</div>
+          </div>
+          <div class="schedule-item">
+            <div class="workout-time">10:00 AM</div>
+            <div class="workout-name">Strength Training</div>
+            <div class="workout-trainer">Trainer: Jane Smith</div>
+            <div class="workout-status status-completed">Completed</div>
+          </div>
+        </div>
+
+        <!-- Recent Activities -->
+        <div class="activities-container">
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="activity-info">
+              <h4>Completed Session</h4>
+              <p>Client: Sarah Brown</p>
+            </div>
+            <div class="activity-time">10:30 AM</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div class="activity-info">
+              <h4>Upcoming Task</h4>
+              <p>Prepare for the Yoga Class</p>
+            </div>
+            <div class="activity-time">12:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Js/javascript_employee.js"></script>
+  </body>
+</html>

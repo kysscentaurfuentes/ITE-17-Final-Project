@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FBW Gym - Sign Up</title>
+    <link rel="stylesheet" href="Css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="bubbles">
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 20"></span>
+    </div>
+
+    <div class="signup-container">
+      <h1>FBW Gym Fitness App</h1>
+
+      <h2>Account Information</h2>
+      <div class="form-section">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Create your username" />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Create your password"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Re-enter your password"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="input-group">
+          <label for="mobile">Mobile Number</label>
+          <input
+            type="tel"
+            id="mobile"
+            placeholder="Enter your mobile number"
+          />
+        </div>
+      </div>
+
+      <h2>Personal Information</h2>
+      <div class="form-section">
+        <div class="input-group">
+          <label for="firstname">First name</label>
+          <input
+            type="text"
+            id="firstname"
+            placeholder="Enter your first name"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="lastname">Last name</label>
+          <input type="text" id="lastname" placeholder="Enter your last name" />
+        </div>
+
+        <div class="input-group">
+          <label for="birthdate">Birthdate</label>
+          <input type="date" id="birthdate" />
+        </div>
+
+        <div class="input-group">
+          <label>Select Gender</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="gender" value="male" /> Male
+            </label>
+            <label>
+              <input type="radio" name="gender" value="female" /> Female
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="other"
+                id="other-gender"
+              />
+              Other
+            </label>
+          </div>
+          <div
+            class="gender-specify"
+            id="gender-specify"
+            style="display: none; margin-top: 10px"
+          >
+            <input
+              type="text"
+              id="other-gender-text"
+              placeholder="Please specify"
+            />
+          </div>
+        </div>
+      </div>
+
+      <h2>Security Questions</h2>
+      <div class="form-section">
+        <div class="security-question question-select">
+          <div class="input-group">
+            <label for="secret-question1">Secret Question 1</label>
+            <select id="secret-question1" class="question-select">
+              <option value="">Select a question</option>
+              <option value="pet">What was your first pet's name?</option>
+              <option value="school">
+                What elementary school did you attend?
+              </option>
+              <option value="mother">What is your mother's maiden name?</option>
+            </select>
+          </div>
+          <div class="input-group answer-group">
+            <label for="answer1">Your answer</label>
+            <input type="text" id="answer1" placeholder="Enter your answer" />
+          </div>
+        </div>
+
+        <div class="security-question question-select">
+          <div class="input-group">
+            <label for="secret-question2">Secret Question 2</label>
+            <select id="secret-question2" class="question-select">
+              <option value="">Select a question</option>
+              <option value="city">In what city were you born?</option>
+              <option value="car">What was your first car model?</option>
+              <option value="teacher">Who was your favorite teacher?</option>
+            </select>
+          </div>
+          <div class="input-group answer-group">
+            <label for="answer2">Your answer</label>
+            <input type="text" id="answer2" placeholder="Enter your answer" />
+          </div>
+        </div>
+      </div>
+
+      <h2>Account Type</h2>
+      <div class="user-type-selection">
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="userType" value="customer" checked />
+            <i class="fas fa-user"></i> Customer
+          </label>
+          <label>
+            <input type="radio" name="userType" value="employee" />
+            <i class="fas fa-user-tie"></i> Employee
+          </label>
+          <label>
+            <input type="radio" name="userType" value="admin" />
+            <i class="fas fa-user-shield"></i> Admin (Requires Verification)
+          </label>
+        </div>
+        <div class="login-status">
+          You're signing up as: <span id="selectedRole">Customer</span>
+        </div>
+      </div>
+
+      <div class="verification-section">
+        <div class="checkbox-item">
+          <input type="checkbox" id="not-robot" />
+          <label for="not-robot">I'm not a robot</label>
+        </div>
+
+        <div class="checkbox-item">
+          <input type="checkbox" id="agree-terms" required />
+          <label for="agree-terms"
+            >I have read and agree to the
+            <a href="Privacy and terms of Service.html" class="terms-link"
+              >Privacy Policy</a
+            >
+            and
+            <a href="Privacy and terms of Service.html" class="terms-link"
+              >Terms of Service</a
+            ></label
+          >
+        </div>
+      </div>
+
+      <button class="signup-btn" id="signupBtn">SIGN UP</button>
+    </div>
+
+    <script src="Js/javascript_sign_up.js"></script>
+  </body>
+</html>

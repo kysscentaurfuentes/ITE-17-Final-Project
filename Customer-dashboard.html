@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FBW Gym Fitness App - Customer Dashboard</title>
+    <link rel="stylesheet" href="Css/dashboard.css" />
+    <link rel="stylesheet" href="Css/customer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <h2>FBW Gym</h2>
+          <p>Client's Dashboard</p>
+          <img
+            src="images/logo.jpg"
+            alt="FBW Gym Logo"
+            height="100"
+            width="100"
+          />
+        </div>
+
+        <div class="nav-menu">
+          <div class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-dumbbell"></i>
+            <span>Workouts</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Schedule</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Progress</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </div>
+          <div class="nav-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </div>
+          <div class="nav-item logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1>Customer Dashboard</h1>
+          <div class="user-profile">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="User"
+            />
+            <span>Maria Santos</span>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Workouts This Week</h3>
+              <h2>4</h2>
+            </div>
+            <div class="stat-icon workouts">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Calories Burned</h3>
+              <h2>1,850</h2>
+            </div>
+            <div class="stat-icon calories">
+              <i class="fas fa-fire"></i>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Progress</h3>
+              <h2>+15%</h2>
+            </div>
+            <div class="stat-icon progress">
+              <i class="fas fa-chart-line"></i>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Current Weight</h3>
+              <h2>68 kg</h2>
+            </div>
+            <div class="stat-icon weight">
+              <i class="fas fa-weight"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workout Schedule -->
+        <h2 class="section-title">
+          <i class="fas fa-calendar-alt"></i>
+          Today's Schedule
+        </h2>
+        <div class="schedule-container">
+          <div class="schedule-item">
+            <div class="workout-time">07:00 AM</div>
+            <div class="workout-name">
+              Full Body Workout
+              <div class="workout-trainer">with Coach Alex</div>
+            </div>
+            <div class="workout-status status-upcoming">Upcoming</div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="workout-time">12:30 PM</div>
+            <div class="workout-name">
+              Yoga Session
+              <div class="workout-trainer">with Instructor Sam</div>
+            </div>
+            <div class="workout-status status-completed">Completed</div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="workout-time">06:00 PM</div>
+            <div class="workout-name">
+              Cardio Training
+              <div class="workout-trainer">with Trainer Jordan</div>
+            </div>
+            <div class="workout-status status-upcoming">Upcoming</div>
+          </div>
+        </div>
+
+        <!-- Recent Activities -->
+        <h2 class="section-title">
+          <i class="fas fa-history"></i>
+          Recent Activities
+        </h2>
+        <div class="activities-container">
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <div class="activity-info">
+              <h4>Completed Strength Training</h4>
+              <p>You finished your workout session</p>
+            </div>
+            <div class="activity-time">2 hours ago</div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="activity-info">
+              <h4>Logged Meal</h4>
+              <p>Chicken salad with quinoa</p>
+            </div>
+            <div class="activity-time">5 hours ago</div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-weight"></i>
+            </div>
+            <div class="activity-info">
+              <h4>Weight Updated</h4>
+              <p>You lost 0.5kg this week</p>
+            </div>
+            <div class="activity-time">1 day ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Js/javascript_customer.js"></script>
+  </body>
+</html>

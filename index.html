@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FBW Gym Fitness App</title>
+    <link rel="stylesheet" href="Css/styles.css" />
+  </head>
+  <body>
+    <div class="bubbles">
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 20"></span>
+    </div>
+
+    <div class="login-container">
+      <h1>FBW Gym Fitness App</h1>
+
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" />
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <div class="options">
+        <label class="remember-me">
+          <input type="checkbox" />
+          Remember me
+        </label>
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+
+      <div class="user-type">
+        <label>
+          <input type="radio" name="userType" value="customer" checked />
+          Customer
+        </label>
+        <label>
+          <input type="radio" name="userType" value="employee" /> Employee
+        </label>
+        <label>
+          <input type="radio" name="userType" value="admin" /> Admin
+        </label>
+      </div>
+
+      <div class="login-status" id="loginStatus">Logging in as: Customer</div>
+
+      <button class="login-btn" id="loginBtn">Login</button>
+
+      <div class="signup-link">
+        Don't have an account? <a href="Sign_up.html">Sign Up</a>
+      </div>
+    </div>
+    <script src="Js/javascript_index.js"></script>
+  </body>
+</html>

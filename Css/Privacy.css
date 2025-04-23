@@ -1,0 +1,91 @@
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* To place it behind content */
+  pointer-events: none; /* Prevent it from interacting with user clicks */
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  opacity: 0;
+  animation: bubble 20s infinite;
+}
+
+/* Size and animation speed */
+.bubbles span:nth-child(1) {
+  width: 30px;
+  height: 30px;
+  animation-duration: 15s;
+  animation-delay: 0s;
+}
+.bubbles span:nth-child(2) {
+  width: 50px;
+  height: 50px;
+  animation-duration: 17s;
+  animation-delay: 3s;
+}
+.bubbles span:nth-child(3) {
+  width: 20px;
+  height: 20px;
+  animation-duration: 18s;
+  animation-delay: 5s;
+}
+.bubbles span:nth-child(4) {
+  width: 40px;
+  height: 40px;
+  animation-duration: 16s;
+  animation-delay: 2s;
+}
+.bubbles span:nth-child(5) {
+  width: 25px;
+  height: 25px;
+  animation-duration: 19s;
+  animation-delay: 6s;
+}
+.bubbles span:nth-child(6) {
+  width: 60px;
+  height: 60px;
+  animation-duration: 21s;
+  animation-delay: 7s;
+}
+.bubbles span:nth-child(7) {
+  width: 35px;
+  height: 35px;
+  animation-duration: 14s;
+  animation-delay: 9s;
+}
+.bubbles span:nth-child(8) {
+  width: 45px;
+  height: 45px;
+  animation-duration: 22s;
+  animation-delay: 11s;
+}
+.bubbles span:nth-child(9) {
+  width: 20px;
+  height: 20px;
+  animation-duration: 23s;
+  animation-delay: 12s;
+}
+.bubbles span:nth-child(10) {
+  width: 50px;
+  height: 50px;
+  animation-duration: 20s;
+  animation-delay: 13s;
+}
+
+@keyframes bubble {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-100vh) scale(1.5);
+  }
+}
